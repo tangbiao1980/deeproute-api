@@ -21,7 +21,7 @@ OpenAI-compatible API relay for DeepSeek and Qwen models at 30-50% cheaper.
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="http://67.216.205.237:3000/v1",
+    base_url="https://deeproute-api.duckdns.org:3000/v1",
     api_key="your-api-key"
 )
 
@@ -35,13 +35,13 @@ print(response.choices[0].message.content)
 ```javascript
 import OpenAI from 'openai';
 const openai = new OpenAI({
-  baseURL: 'http://67.216.205.237:3000/v1',
+  baseURL: 'https://deeproute-api.duckdns.org:3000/v1',
   apiKey: 'your-api-key'
 });
 ```
 
 ```bash
-curl http://67.216.205.237:3000/v1/chat/completions \
+curl https://deeproute-api.duckdns.org:3000/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer your-api-key" \
   -d '{
@@ -52,6 +52,6 @@ curl http://67.216.205.237:3000/v1/chat/completions \
 
 ## Register
 
-Get your free API key: http://67.216.205.237:3000/register
+Get your free API key: https://deeproute-api.duckdns.org:3000/register
 
 New accounts receive free trial credit.
