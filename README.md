@@ -35,6 +35,18 @@ OpenAI-compatible API relay. No credit card required. PayPal accepted.
 | Qwen3 Coder Flash | $0.25 | $1.50 |
 | Qwen3 VL Flash | $0.65 | $1.95 |
 
+## 💰 Partner Program
+
+Earn **15% lifetime commission** by referring developers to DeepRoute API.
+
+- Share your affiliate link
+- You earn 15% of their spending forever
+- PayPal payout monthly
+
+👉 [Join the partner program](https://deeproute-api.duckdns.org/order/affiliate)
+
+---
+
 ## Quick Start
 
 ```python
