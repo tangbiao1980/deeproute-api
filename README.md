@@ -10,10 +10,18 @@ OpenAI-compatible API relay for DeepSeek and Qwen models at 30-50% cheaper.
 | DeepSeek V3 (Chat) | $0.16 | $0.32 |
 | DeepSeek V4 Pro | $2.00 | $4.00 |
 | DeepSeek R1 | $0.63 | $2.52 |
-| Qwen-Turbo | $0.11 | $0.22 |
-| Qwen-Plus | $0.16 | $0.33 |
-| Qwen-Max | $0.55 | $1.64 |
+| Qwen3.6-Flash | $0.30 | $1.80 |
+| Qwen-Flash | $0.10 | $0.50 |
+| Qwen3.6-Plus | $0.60 | $3.60 |
+| Qwen3.7-Max | $3.00 | $9.00 |
+| QwQ-Plus | $0.95 | $2.85 |
 | QwQ 32B Preview | $0.55 | $1.64 |
+| Qwen-Max | $0.55 | $1.64 |
+| Qwen-Plus | $0.16 | $0.33 |
+| Qwen-Turbo | $0.11 | $0.22 |
+| Qwen3-Coder-Plus | $0.60 | $3.60 |
+| Qwen3-Coder-Flash | $0.25 | $1.50 |
+| Qwen3-VL-Flash | $0.25 | $1.50 |
 
 ## Quick Start
 
@@ -41,10 +49,7 @@ const openai = new OpenAI({
 ```
 
 ```bash
-curl https://deeproute-api.duckdns.org/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer your-api-key" \
-  -d '{
+curl https://deeproute-api.duckdns.org/v1/chat/completions   -H "Content-Type: application/json"   -H "Authorization: Bearer your-api-key"   -d '{
     "model": "deepseek-chat",
     "messages": [{"role": "user", "content": "Hello!"}]
   }'
