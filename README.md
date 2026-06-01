@@ -6,7 +6,7 @@ OpenAI-compatible API relay. No credit card required. PayPal accepted.
 
 | Feature | DeepRoute | OpenRouter | DeepSeek Official |
 |---------|-----------|------------|-------------------|
-| **DeepSeek V4 Flash** | **$0.16/$0.32** | $0.14/$0.28 | $0.14/$0.28 |
+| **DeepSeek V4 Flash** | **$0.18/$0.35** | $0.14/$0.28 | $0.14/$0.28 |
 | **Qwen-Max** | **$0.87/$2.60** | $1.60/$6.40 | — |
 | **Qwen3.6 Flash** | **$0.30/$1.79** | Not available | — |
 | **Free Trial** | ✅ Yes | ❌ | ✅ 5M tokens |
