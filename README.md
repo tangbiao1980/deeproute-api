@@ -1,6 +1,9 @@
 # DeepRoute API — One API Key for DeepSeek & Qwen
 
 > **OpenAI-compatible API relay. No credit card required. PayPal accepted.**
+>
+> 🇨🇳 **China users:** [https://deeproute-ai.xyz](https://deeproute-ai.xyz) — direct access, no VPN needed
+> 🌐 **Global users:** [https://deeproute-api.duckdns.org](https://deeproute-api.duckdns.org)
 
 [![DeepSeek](https://img.shields.io/badge/DeepSeek-V4%20Flash%20%7C%20V4%20Pro%20%7C%20R1-blue)]()
 [![Qwen](https://img.shields.io/badge/Qwen-Max%20%7C%20Turbo%20%7C%20Plus%20%7C%20Flash-orange)]()
@@ -14,7 +17,7 @@
 |------------|----------|
 | Need a credit card for every AI provider | **PayPal accepted, no card needed** |
 | Multiple API keys for different models | **One key for all models** |
-| Network issues accessing foreign APIs | **Stable global + China direct access** |
+| Network issues accessing foreign APIs | **Stable global + 🇨🇳 China direct access via deeproute-ai.xyz** |
 | Minimum deposits and monthly commitments | **Pay-as-you-go, no minimum** |
 
 ---
@@ -44,7 +47,7 @@
 ```python
 from openai import OpenAI
 client = OpenAI(
-    base_url="https://deeproute-api.duckdns.org/v1",
+    base_url="https://deeproute-api.duckdns.org/v1"  # China: https://deeproute-ai.xyz/v1,
     api_key="your-api-key"
 )
 response = client.chat.completions.create(
@@ -57,7 +60,7 @@ print(response.choices[0].message.content)
 ### cURL
 
 ```bash
-curl https://deeproute-api.duckdns.org/v1/chat/completions \
+curl https://deeproute-api.duckdns.org/v1/chat/completions  # China: https://deeproute-ai.xyz/v1 \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer your-api-key" \
   -d '{"model": "deepseek-v4-flash", "messages": [{"role": "user", "content": "Hello!"}]}'
@@ -68,7 +71,7 @@ curl https://deeproute-api.duckdns.org/v1/chat/completions \
 ```javascript
 import OpenAI from 'openai';
 const client = new OpenAI({
-  baseURL: 'https://deeproute-api.duckdns.org/v1',
+  baseURL: 'https://deeproute-api.duckdns.org/v1',  // China: https://deeproute-ai.xyz/v1,
   apiKey: 'your-api-key'
 });
 const stream = await client.chat.completions.create({
@@ -85,7 +88,7 @@ for await (const chunk of stream) {
 
 ## How to Buy
 
-1. **Register** → [deeproute-api.duckdns.org/register](https://deeproute-api.duckdns.org/register) — free trial
+1. **Register** → [deeproute-ai.xyz/register](https://deeproute-ai.xyz/register) (China) or [deeproute-api.duckdns.org/register](https://deeproute-api.duckdns.org/register) (Global) — free trial
 2. **Get your API key** from dashboard
 3. **Top up** via PayPal to `m15828417588@163.com`
 4. **Start coding** — quota added within minutes
@@ -130,7 +133,8 @@ for await (const chunk of stream) {
 A: Yes. Drop-in replacement — just change `base_url` and `api_key`.
 
 **Q: Can I use it from China?**
-A: Yes. Direct connection available, no VPN required.
+A: Yes. Access via [deeproute-ai.xyz](https://deeproute-ai.xyz) — direct connection, no VPN required.
+   Global users continue using [deeproute-api.duckdns.org](https://deeproute-api.duckdns.org).
 
 **Q: How fast is quota added after PayPal?**
 A: Minutes during business hours. Contact @DeepRouteCN for instant.
