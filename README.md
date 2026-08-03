@@ -1,12 +1,11 @@
-# DeepRoute API — One API Key for DeepSeek & Qwen
+# DeepRoute API — One API Key for DeepSeek V4 & Qwen
 
 > **OpenAI-compatible API relay. No credit card required. PayPal accepted.**
 >
-> 🇨🇳 **China users:** [https://deeproute-ai.xyz](https://deeproute-ai.xyz) — direct access, no VPN needed
-> 🌐 **Global users:** [https://deeproute-api.duckdns.org](https://deeproute-api.duckdns.org)
+> 🌐 **Global:** [https://deeprouteapi.com](https://deeprouteapi.com)
 
-[![DeepSeek](https://img.shields.io/badge/DeepSeek-V4%20Flash%20%7C%20V4%20Pro%20%7C%20R1-blue)]()
-[![Qwen](https://img.shields.io/badge/Qwen-Max%20%7C%20Turbo%20%7C%20Plus%20%7C%20Flash-orange)]()
+[![DeepSeek](https://img.shields.io/badge/DeepSeek-V4%20Flash%20%7C%20V4%20Pro-blue)]()
+[![Qwen](https://img.shields.io/badge/Qwen-Max%20%7C%20Plus%20%7C%20Turbo%20%7C%20Flash-orange)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
 
 ---
@@ -17,26 +16,29 @@
 |------------|----------|
 | Need a credit card for every AI provider | **PayPal accepted, no card needed** |
 | Multiple API keys for different models | **One key for all models** |
-| Network issues accessing foreign APIs | **Stable global + 🇨🇳 China direct access via deeproute-ai.xyz** |
+| Separate accounts per provider | **One gateway, many models** |
 | Minimum deposits and monthly commitments | **Pay-as-you-go, no minimum** |
 
 ---
 
 ## Supported Models
 
-| Model | Input ($/1M) | Output ($/1M) | Context |
-|-------|:-----------:|:------------:|:-------:|
-| **DeepSeek V4 Flash** | $0.16 | $0.32 | 128K |
-| **DeepSeek V4 Pro** | $2.00 | $4.00 | 128K |
-| **DeepSeek V3 (Chat)** | $0.16 | $0.32 | 64K |
-| **DeepSeek R1** | $0.63 | $2.52 | 64K |
-| **Qwen Max** | $0.87 | $2.60 | 32K |
-| **Qwen Turbo** | $0.26 | $0.52 | 1M |
-| **Qwen Plus** | $0.78 | $1.56 | 131K |
-| **Qwen3.6 Flash** | $0.30 | $1.79 | 128K |
-| **Qwen3.7 Max** | $3.00 | $9.00 | 128K |
-| **QwQ Plus** | $0.95 | $2.85 | 32K |
-| **QwQ 32B Preview** | $0.55 | $1.64 | 32K |
+| Model | Input ($/1M) | Output ($/1M) |
+|-------|:-----------:|:------------:|
+| **DeepSeek V4 Flash** | $0.19 | $0.38 |
+| **DeepSeek V4 Pro** | $0.60 | $1.21 |
+| **Qwen Max** | $0.88 | $1.75 |
+| **Qwen Plus** | $0.44 | $0.88 |
+| **Qwen Turbo** | $0.14 | $0.27 |
+| **Qwen3.6 Flash** | $0.66 | $1.31 |
+| **Qwen3.6 Plus** | $1.07 | $2.14 |
+| **Qwen Coder Flash** | $1.42 | $2.85 |
+| **Qwen Coder Plus** | $2.14 | $4.27 |
+| **Qwen2.5 72B** | $1.10 | $2.19 |
+| **Qwen2.5 32B / 14B / 7B** | from $0.11 | from $0.22 |
+| **QwQ 32B Preview** | $0.55 | $1.10 |
+
+Pay-as-you-go, no subscription, no minimum deposit.
 
 ---
 
@@ -46,8 +48,9 @@
 
 ```python
 from openai import OpenAI
+
 client = OpenAI(
-    base_url="https://deeproute-api.duckdns.org/v1"  # China: https://deeproute-ai.xyz/v1,
+    base_url="https://deeprouteapi.com/v1",
     api_key="your-api-key"
 )
 response = client.chat.completions.create(
@@ -60,42 +63,26 @@ print(response.choices[0].message.content)
 ### cURL
 
 ```bash
-curl https://deeproute-api.duckdns.org/v1/chat/completions  # China: https://deeproute-ai.xyz/v1 \
+curl https://deeprouteapi.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer your-api-key" \
   -d '{"model": "deepseek-v4-flash", "messages": [{"role": "user", "content": "Hello!"}]}'
 ```
 
-### Node.js
-
-```javascript
-import OpenAI from 'openai';
-const client = new OpenAI({
-  baseURL: 'https://deeproute-api.duckdns.org/v1',  // China: https://deeproute-ai.xyz/v1,
-  apiKey: 'your-api-key'
-});
-const stream = await client.chat.completions.create({
-  model: 'deepseek-v4-flash',
-  messages: [{role: 'user', content: 'Hello!'}],
-  stream: true,
-});
-for await (const chunk of stream) {
-  process.stdout.write(chunk.choices[0]?.delta?.content || '');
-}
-```
+Switch models by changing the `model` field — `deepseek-v4-flash`, `deepseek-v4-pro`, `qwen-max`, `qwen-plus`, `qwen-turbo`, etc.
 
 ---
 
 ## How to Buy
 
-1. **Register** → [deeproute-ai.xyz/register](https://deeproute-ai.xyz/register) (China) or [deeproute-api.duckdns.org/register](https://deeproute-api.duckdns.org/register) (Global) — free trial
-2. **Get your API key** from dashboard
-3. **Top up** via PayPal to `m15828417588@163.com`
-4. **Start coding** — quota added within minutes
+1. **Register** → [deeprouteapi.com/register](https://deeprouteapi.com/register) — new accounts get a free trial balance
+2. **Get your API key** from the dashboard
+3. **Top up** via PayPal — order page: [deeprouteapi.com/order](https://deeprouteapi.com/order)
+4. **Start coding** — quota is added automatically after payment
 
 ---
 
-## Why Not Official Providers?
+## Why Not Just Official Providers?
 
 | | **DeepRoute** | DeepSeek Official | OpenRouter |
 |---|:---:|:---:|:---:|
@@ -104,8 +91,8 @@ for await (const chunk of stream) {
 | Minimum Deposit | **None** | Yes | None |
 | Single Key for All Models | **Yes** | No | Yes |
 | Telegram Support | **Yes** | Ticket | Forum |
-| DeepSeek V4 Flash | $0.16/$0.32 | $0.14/$0.28 | $0.14/$0.28 |
-| Qwen Max | $0.87/$2.60 | — | $1.60/$6.40 |
+| DeepSeek V4 Flash | $0.19/$0.38 | $0.14/$0.28 | $0.14/$0.28 |
+| Qwen Max | $0.88/$1.75 | — | $1.60/$6.40 |
 
 ---
 
@@ -117,6 +104,12 @@ for await (const chunk of stream) {
 - ✅ No minimum — load exactly what you need
 - ✅ Multi-model — switch by changing one parameter
 - ✅ Stable uptime — enterprise infrastructure
+
+---
+
+## Guide
+
+Read the full tutorial: [Multi-model gateway guide](docs/multi-model-guide.md)
 
 ---
 
@@ -132,12 +125,11 @@ for await (const chunk of stream) {
 **Q: Is the API compatible with OpenAI's SDK?**
 A: Yes. Drop-in replacement — just change `base_url` and `api_key`.
 
-**Q: Can I use it from China?**
-A: Yes. Access via [deeproute-ai.xyz](https://deeproute-ai.xyz) — direct connection, no VPN required.
-   Global users continue using [deeproute-api.duckdns.org](https://deeproute-api.duckdns.org).
+**Q: Can I use it from anywhere?**
+A: Yes. [deeprouteapi.com](https://deeprouteapi.com) is globally accessible.
 
 **Q: How fast is quota added after PayPal?**
-A: Minutes during business hours. Contact @DeepRouteCN for instant.
+A: Automatically within minutes via PayPal Instant Payment Notification.
 
 **Q: Do you offer refunds?**
 A: Yes — contact us within 7 days for unused quota refunds.
